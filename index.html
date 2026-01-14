@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>Shopping Influencer per Aziende</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --color-white: rgba(255, 255, 255, 1);
+      --color-black: rgba(0, 0, 0, 1);
+      --color-cream-50: rgba(252, 252, 249, 1);
+      --color-cream-100: rgba(255, 255, 253, 1);
+      --color-gray-200: rgba(245, 245, 245, 1);
+      --color-gray-300: rgba(167, 169, 169, 1);
+      --color-gray-400: rgba(119, 124, 124, 1);
+      --color-slate-500: rgba(98, 108, 113, 1);
+      --color-brown-600: rgba(94, 82, 64, 1);
+      --color-charcoal-700: rgba(31, 33, 33, 1);
+      --color-charcoal-800: rgba(38, 40, 40, 1);
+      --color-slate-900: rgba(19, 52, 59, 1);
+      --color-teal-300: rgba(50, 184, 198, 1);
+      --color-teal-400: rgba(45, 166, 178, 1);
+      --color-teal-500: rgba(33, 128, 141, 1);
+      --color-teal-600: rgba(29, 116, 128, 1);
+      --color-teal-700: rgba(26, 104, 115, 1);
+      --color-teal-800: rgba(41, 150, 161, 1);
+      --color-red-400: rgba(255, 84, 89, 1);
+      --color-red-500: rgba(192, 21, 47, 1);
+      --color-orange-400: rgba(230, 129, 97, 1);
+      --color-orange-500: rgba(168, 75, 47, 1);
+
+      --color-brown-600-rgb: 94, 82, 64;
+      --color-teal-500-rgb: 33, 128, 141;
+      --color-slate-900-rgb: 19, 52, 59;
+      --color-slate-500-rgb: 98, 108, 113;
+      --color-red-500-rgb: 192, 21, 47;
+      --color-red-400-rgb: 255, 84, 89;
+      --color-orange-500-rgb: 168, 75, 47;
+      --color-orange-400-rgb: 230, 129, 97;
+
+      --color-bg-1: rgba(59, 130, 246, 0.08);
+      --color-bg-2: rgba(245, 158, 11, 0.08);
+      --color-bg-3: rgba(34, 197, 94, 0.08);
+      --color-bg-4: rgba(239, 68, 68, 0.08);
+      --color-bg-5: rgba(147, 51, 234, 0.08);
+      --color-bg-6: rgba(249, 115, 22, 0.08);
+      --color-bg-7: rgba(236, 72, 153, 0.08);
+      --color-bg-8: rgba(6, 182, 212, 0.08);
+
+      --color-background: var(--color-cream-50);
+      --color-surface: var(--color-cream-100);
+      --color-text: var(--color-slate-900);
+      --color-text-secondary: var(--color-slate-500);
+      --color-primary: var(--color-teal-500);
+      --color-primary-hover: var(--color-teal-600);
+      --color-primary-active: var(--color-teal-700);
+      --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
+      --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
+      --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
+      --color-border: rgba(var(--color-brown-600-rgb), 0.2);
+      --color-btn-primary-text: var(--color-cream-50);
+      --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
+      --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
+      --color-error: var(--color-red-500);
+      --color-success: var(--color-teal-500);
+      --color-warning: var(--color-orange-500);
+      --color-info: var(--color-slate-500);
+      --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
+      --color-select-caret: rgba(var(--color-slate-900-rgb), 0.8);
+
+      --color-success-rgb: 33, 128, 141;
+      --color-error-rgb: 192, 21, 47;
+      --color-warning-rgb: 168, 75, 47;
+      --color-info-rgb: 98, 108, 113;
+
+      --font-family-base: "FKGroteskNeue", "Geist", "Inter", -apple-system,
+        BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-family-mono: "Berkeley Mono", ui-monospace, SFMono-Regular, Menlo,
+        Monaco, Consolas, monospace;
+      --font-size-xs: 11px;
+      --font-size-sm: 12px;
+      --font-size-base: 14px;
+      --font-size-md: 14px;
+      --font-size-lg: 16px;
+      --font-size-xl: 18px;
+      --font-size-2xl: 20px;
+      --font-size-3xl: 24px;
+      --font-size-4xl: 30px;
+      --font-weight-normal: 400;
+      --font-weight-medium: 500;
+      --font-weight-semibold: 550;
+      --font-weight-bold: 600;
+      --line-height-tight: 1.2;
+      --line-height-normal: 1.5;
+      --letter-spacing-tight: -0.01em;
+
+      --space-0: 0;
+      --space-1: 1px;
+      --space-2: 2px;
+      --space-4: 4px;
+      --space-6: 6px;
+      --space-8: 8px;
+      --space-10: 10px;
+      --space-12: 12px;
+      --space-16: 16px;
+      --space-20: 20px;
+      --space-24: 24px;
+      --space-32: 32px;
+
+      --radius-sm: 6px;
+      --radius-base: 8px;
+      --radius-md: 10px;
+      --radius-lg: 12px;
+      --radius-full: 9999px;
+
+      --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04),
+        0 2px 4px -1px rgba(0, 0, 0, 0.02);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04),
+        0 4px 6px -2px rgba(0, 0, 0, 0.02);
+      --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.15),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.03);
+
+      --duration-fast: 150ms;
+      --duration-normal: 250ms;
+      --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+
+      --container-sm: 640px;
+      --container-md: 768px;
+      --container-lg: 1024px;
+      --container-xl: 1280px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-gray-400-rgb: 119, 124, 124;
+        --color-teal-300-rgb: 50, 184, 198;
+        --color-gray-300-rgb: 167, 169, 169;
+        --color-gray-200-rgb: 245, 245, 245;
+
+        --color-bg-1: rgba(29, 78, 216, 0.15);
+        --color-bg-2: rgba(180, 83, 9, 0.15);
+        --color-bg-3: rgba(21, 128, 61, 0.15);
+        --color-bg-4: rgba(185, 28, 28, 0.15);
+        --color-bg-5: rgba(107, 33, 168, 0.15);
+        --color-bg-6: rgba(194, 65, 12, 0.15);
+        --color-bg-7: rgba(190, 24, 93, 0.15);
+        --color-bg-8: rgba(8, 145, 178, 0.15);
+
+        --color-background: var(--color-charcoal-700);
+        --color-surface: var(--color-charcoal-800);
+        --color-text: var(--color-gray-200);
+        --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
+        --color-primary: var(--color-teal-300);
+        --color-primary-hover: var(--color-teal-400);
+        --color-primary-active: var(--color-teal-800);
+        --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
+        --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
+        --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
+        --color-border: rgba(var(--color-gray-400-rgb), 0.3);
+        --color-error: var(--color-red-400);
+        --color-success: var(--color-teal-300);
+        --color-warning: var(--color-orange-400);
+        --color-info: var(--color-gray-300);
+        --color-focus-ring: rgba(var(--color-teal-300-rgb), 0.4);
+        --color-btn-primary-text: var(--color-slate-900);
+        --color-card-border: rgba(var(--color-gray-400-rgb), 0.2);
+        --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.15);
+        --button-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
+        --color-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
+        --color-select-caret: rgba(var(--color-gray-200-rgb), 0.8);
+
+        --focus-ring: 0 0 0 3px var(--color-focus-ring);
+        --focus-outline: 2px solid var(--color-primary);
+        --status-bg-opacity: 0.15;
+        --status-border-opacity: 0.25;
+      }
+    }
+
+    [data-color-scheme="dark"] {
+      --color-gray-400-rgb: 119, 124, 124;
+      --color-teal-300-rgb: 50, 184, 198;
+      --color-gray-300-rgb: 167, 169, 169;
+      --color-gray-200-rgb: 245, 245, 245;
+
+      --color-bg-1: rgba(29, 78, 216, 0.15);
+      --color-bg-2: rgba(180, 83, 9, 0.15);
+      --color-bg-3: rgba(21, 128, 61, 0.15);
+      --color-bg-4: rgba(185, 28, 28, 0.15);
+      --color-bg-5: rgba(107, 33, 168, 0.15);
+      --color-bg-6: rgba(194, 65, 12, 0.15);
+      --color-bg-7: rgba(190, 24, 93, 0.15);
+      --color-bg-8: rgba(8, 145, 178, 0.15);
+
+      --color-background: var(--color-charcoal-700);
+      --color-surface: var(--color-charcoal-800);
+      --color-text: var(--color-gray-200);
+      --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
+      --color-primary: var(--color-teal-300);
+      --color-primary-hover: var(--color-teal-400);
+      --color-primary-active: var(--color-teal-800);
+      --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
+      --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
+      --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
+      --color-border: rgba(var(--color-gray-400-rgb), 0.3);
+      --color-error: var(--color-red-400);
+      --color-success: var(--color-teal-300);
+      --color-warning: var(--color-orange-400);
+      --color-info: var(--color-gray-300);
+      --color-focus-ring: rgba(var(--color-teal-300-rgb), 0.4);
+      --color-btn-primary-text: var(--color-slate-900);
+      --color-card-border: rgba(var(--color-gray-400-rgb), 0.15);
+      --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.15);
+      --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+      --color-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
+      --color-select-caret: rgba(var(--color-gray-200-rgb), 0.8);
+
+      --focus-ring: 0 0 0 3px var(--color-focus-ring);
+      --focus-outline: 2px solid var(--color-primary);
+      --status-bg-opacity: 0.15;
+      --status-border-opacity: 0.25;
+    }
+
+    [data-color-scheme="light"] {
+      --color-brown-600-rgb: 94, 82, 64;
+      --color-teal-500-rgb: 33, 128, 141;
+      --color-slate-900-rgb: 19, 52, 59;
+
+      --color-background: var(--color-cream-50);
+      --color-surface: var(--color-cream-100);
+      --color-text: var(--color-slate-900);
+      --color-text-secondary: var(--color-slate-500);
+      --color-primary: var(--color-teal-500);
+      --color-primary-hover: var(--color-teal-600);
+      --color-primary-active: var(--color-teal-700);
+      --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
+      --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
+      --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
+      --color-border: rgba(var(--color-brown-600-rgb), 0.2);
+      --color-btn-primary-text: var(--color-cream-50);
+      --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
+      --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
+      --color-error: var(--color-red-500);
+      --color-success: var(--color-teal-500);
+      --color-warning: var(--color-orange-500);
+      --color-info: var(--color-slate-500);
+      --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
+
+      --color-success-rgb: var(--color-teal-500-rgb);
+      --color-error-rgb: var(--color-red-500-rgb);
+      --color-warning-rgb: var(--color-orange-500-rgb);
+      --color-info-rgb: var(--color-slate-500-rgb);
+    }
+
+    html {
+      font-size: var(--font-size-base);
+      font-family: var(--font-family-base);
+      line-height: var(--line-height-normal);
+      color: var(--color-text);
+      background-color: var(--color-background);
+      -webkit-font-smoothing: antialiased;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at top left, rgba(33, 128, 141, 0.08), transparent 50%),
+                  radial-gradient(circle at bottom right, rgba(94, 82, 64, 0.08), transparent 55%),
+                  var(--color-background);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
+      font-weight: var(--font-weight-semibold);
+      line-height: var(--line-height-tight);
+      color: var(--color-text);
+      letter-spacing: var(--letter-spacing-tight);
+    }
+
+    h1 {
+      font-size: var(--font-size-4xl);
+    }
+    h2 {
+      font-size: var(--font-size-3xl);
+    }
+    h3 {
+      font-size: var(--font-size-2xl);
+    }
+    h4 {
+      font-size: var(--font-size-xl);
+    }
+
+    p {
+      margin: 0 0 var(--space-16) 0;
+    }
+
+    a {
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: color var(--duration-fast) var(--ease-standard);
+    }
+
+    a:hover {
+      color: var(--color-primary-hover);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-10) var(--space-20);
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-md);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      cursor: pointer;
+      transition: all var(--duration-normal) var(--ease-standard);
+      border: none;
+      text-decoration: none;
+      position: relative;
+      box-shadow: var(--shadow-md);
+      gap: var(--space-8);
+      background: var(--color-primary);
+      color: var(--color-btn-primary-text);
+    }
+
+    .btn:hover {
+      background: var(--color-primary-hover);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn:active {
+      background: var(--color-primary-active);
+      transform: translateY(0);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(var(--color-teal-500-rgb), 0.45);
+    }
+
+    .btn-secondary {
+      background: var(--color-secondary);
+      color: var(--color-text);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-secondary:hover {
+      background: var(--color-secondary-hover);
+      box-shadow: var(--shadow-md);
+    }
+
+    .container {
+      width: 100%;
+      margin-right: auto;
+      margin-left: auto;
+      padding-right: var(--space-16);
+      padding-left: var(--space-16);
+      max-width: var(--container-xl);
+    }
+
+    .hero {
+      padding: var(--space-32) 0 var(--space-24);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: var(--space-24);
+      align-items: center;
+    }
+
+    .hero-kicker {
+      font-size: var(--font-size-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-8);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-6);
+    }
+
+    .hero-kicker-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--color-primary);
+    }
+
+    .hero-title {
+      font-size: 38px;
+      margin-bottom: var(--space-12);
+    }
+
+    .hero-highlight {
+      color: var(--color-primary);
+    }
+
+    .hero-subtitle {
+      font-size: var(--font-size-lg);
+      color: var(--color-text-secondary);
+      max-width: 34rem;
+      margin-bottom: var(--space-24);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-12);
+      align-items: center;
+      margin-bottom: var(--space-16);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-6);
+      padding: var(--space-6) var(--space-10);
+      border-radius: var(--radius-full);
+      background: rgba(var(--color-teal-500-rgb), 0.06);
+      border: 1px solid rgba(var(--color-teal-500-rgb), 0.22);
+      color: var(--color-text-secondary);
+      font-size: var(--font-size-xs);
+    }
+
+    .hero-badge span {
+      font-weight: var(--font-weight-medium);
+      color: var(--color-primary);
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-card {
+      position: relative;
+      background: var(--color-surface);
+      border-radius: 24px;
+      border: 1px solid var(--color-card-border);
+      box-shadow: var(--shadow-lg);
+      padding: var(--space-20);
+      overflow: hidden;
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--space-16);
+    }
+
+    .hero-card-title {
+      font-size: var(--font-size-md);
+      font-weight: var(--font-weight-medium);
+    }
+
+    .hero-chip {
+      padding: var(--space-4) var(--space-8);
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-xs);
+      background: rgba(var(--color-teal-500-rgb), 0.08);
+      color: var(--color-primary);
+      border: 1px solid rgba(var(--color-teal-500-rgb), 0.25);
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-12);
+      margin-bottom: var(--space-12);
+    }
+
+    .metric-pill {
+      padding: var(--space-10) var(--space-12);
+      border-radius: var(--radius-lg);
+      background: var(--color-background);
+      border: 1px solid var(--color-card-border-inner);
+    }
+
+    .metric-label {
+      font-size: var(--font-size-xs);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-4);
+    }
+
+    .metric-value {
+      font-size: var(--font-size-lg);
+      font-weight: var(--font-weight-semibold);
+    }
+
+    .metric-sub {
+      font-size: var(--font-size-xs);
+      color: var(--color-success);
+    }
+
+    .hero-footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: var(--space-12);
+      font-size: var(--font-size-xs);
+    }
+
+    .status {
+      padding: var(--space-4) var(--space-8);
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-xs);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-4);
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+    }
+
+    .status--success {
+      background-color: rgba(var(--color-success-rgb), 0.15);
+      color: var(--color-success);
+      border: 1px solid rgba(var(--color-success-rgb), 0.35);
+    }
+
+    .status--success .status-dot {
+      background: var(--color-success);
+    }
+
+    .hero-ai-tag {
+      position: absolute;
+      top: -10px;
+      right: 10px;
+      padding: var(--space-4) var(--space-8);
+      border-radius: var(--radius-full);
+      background: rgba(var(--color-teal-500-rgb), 0.15);
+      border: 1px solid rgba(var(--color-teal-500-rgb), 0.35);
+      font-size: var(--font-size-xs);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-4);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-ai-tag span:first-child {
+      font-size: 14px;
+    }
+
+    .section {
+      padding: var(--space-24) 0;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: var(--space-16);
+      margin-bottom: var(--space-20);
+    }
+
+    .section-title {
+      font-size: var(--font-size-2xl);
+      margin-bottom: var(--space-4);
+    }
+
+    .section-subtitle {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+    }
+
+    .badge-soft {
+      padding: var(--space-4) var(--space-8);
+      border-radius: var(--radius-full);
+      background: var(--color-secondary);
+      font-size: var(--font-size-xs);
+      color: var(--color-text-secondary);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-4);
+    }
+
+    .grid-features {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-16);
+    }
+
+    .card {
+      background-color: var(--color-surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-card-border);
+      box-shadow: var(--shadow-sm);
+      padding: var(--space-16);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-8);
+    }
+
+    .card-label {
+      font-size: var(--font-size-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-secondary);
+    }
+
+    .card-title {
+      font-size: var(--font-size-md);
+      font-weight: var(--font-weight-semibold);
+    }
+
+    .card-body {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-6);
+      margin-top: var(--space-8);
+    }
+
+    .pill {
+      padding: var(--space-4) var(--space-8);
+      border-radius: var(--radius-full);
+      background: rgba(var(--color-brown-600-rgb), 0.06);
+      font-size: var(--font-size-xs);
+      color: var(--color-text-secondary);
+    }
+
+    .pricing {
+      padding: var(--space-24) 0;
+    }
+
+    .pricing-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 2fr);
+      gap: var(--space-20);
+      align-items: stretch;
+    }
+
+    .pricing-main {
+      background: var(--color-surface);
+      border-radius: 20px;
+      border: 1px solid var(--color-card-border);
+      box-shadow: var(--shadow-md);
+      padding: var(--space-20);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-main::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(33, 128, 141, 0.22), transparent 55%);
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .pricing-main-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .pricing-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-6);
+      padding: var(--space-4) var(--space-8);
+      border-radius: var(--radius-full);
+      background: rgba(var(--color-teal-500-rgb), 0.08);
+      border: 1px solid rgba(var(--color-teal-500-rgb), 0.35);
+      font-size: var(--font-size-xs);
+      color: var(--color-primary);
+      margin-bottom: var(--space-12);
+    }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-8);
+      margin-bottom: var(--space-4);
+    }
+
+    .price {
+      font-size: 32px;
+      font-weight: var(--font-weight-bold);
+    }
+
+    .price-once {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+    }
+
+    .pricing-note {
+      font-size: var(--font-size-xs);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-16);
+    }
+
+    .pricing-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 var(--space-16) 0;
+      display: grid;
+      gap: var(--space-8);
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+    }
+
+    .pricing-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-8);
+    }
+
+    .check-icon {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: rgba(var(--color-teal-500-rgb), 0.1);
+      border: 1px solid rgba(var(--color-teal-500-rgb), 0.5);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: var(--color-primary);
+      font-size: 11px;
+    }
+
+    .pricing-side {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-12);
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-6);
+      padding: var(--space-4) var(--space-8);
+      border-radius: var(--radius-full);
+      background: var(--color-bg-2);
+      font-size: var(--font-size-xs);
+    }
+
+    .tag strong {
+      color: var(--color-warning);
+    }
+
+    .lead-box {
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      border: 1px dashed var(--color-card-border);
+      padding: var(--space-16);
+    }
+
+    .lead-row {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--space-16);
+      align-items: center;
+      margin-bottom: var(--space-8);
+    }
+
+    .lead-meta {
+      font-size: var(--font-size-xs);
+      color: var(--color-text-secondary);
+    }
+
+    .contact {
+      padding: var(--space-24) 0 var(--space-32);
+    }
+
+    .contact-inner {
+      background: var(--color-surface);
+      border-radius: 18px;
+      border: 1px solid var(--color-card-border);
+      box-shadow: var(--shadow-md);
+      padding: var(--space-20);
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: var(--space-20);
+      align-items: center;
+    }
+
+    .contact-title {
+      font-size: var(--font-size-2xl);
+      margin-bottom: var(--space-8);
+    }
+
+    .contact-text {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-12);
+    }
+
+    .contact-meta {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+    }
+
+    .contact-meta strong {
+      color: var(--color-text);
+    }
+
+    .contact-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-6);
+      padding: var(--space-4) var(--space-8);
+      border-radius: var(--radius-full);
+      background: var(--color-bg-8);
+      font-size: var(--font-size-xs);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-8);
+    }
+
+    .whatsapp-box {
+      text-align: right;
+    }
+
+    .whatsapp-label {
+      font-size: var(--font-size-xs);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-6);
+    }
+
+    .whatsapp-number {
+      font-family: var(--font-family-mono);
+      font-size: var(--font-size-sm);
+      color: var(--color-text);
+    }
+
+    .whatsapp-btn {
+      margin-top: var(--space-8);
+    }
+
+    .badge-ai {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-6);
+      padding: var(--space-4) var(--space-8);
+      border-radius: var(--radius-full);
+      background: var(--color-bg-1);
+      font-size: var(--font-size-xs);
+      color: var(--color-text-secondary);
+      margin-top: var(--space-8);
+    }
+
+    .badge-ai span:first-child {
+      font-size: 14px;
+    }
+
+    .footer {
+      padding: var(--space-16) 0 var(--space-24);
+      font-size: var(--font-size-xs);
+      color: var(--color-text-secondary);
+      text-align: center;
+    }
+
+    .footer a {
+      color: var(--color-text-secondary);
+      text-decoration: underline;
+    }
+
+    .list-inline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-8);
+      font-size: var(--font-size-xs);
+      color: var(--color-text-secondary);
+    }
+
+    .dot-divider::before {
+      content: "•";
+      margin: 0 var(--space-4);
+      opacity: 0.5;
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .pricing-wrap,
+      .contact-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding-top: var(--space-24);
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .hero-card {
+        max-width: 420px;
+        margin: 0 auto;
+      }
+
+      .contact-inner {
+        text-align: left;
+      }
+
+      .whatsapp-box {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .grid-features {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-title {
+        font-size: 30px;
+      }
+
+      .hero-subtitle {
+        font-size: var(--font-size-md);
+      }
+    }
+
+    @font-face {
+      font-family: 'FKGroteskNeue';
+      src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2') format('woff2');
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-kicker">
+              <span class="hero-kicker-dot"></span>
+              <span>B2B • Shopping Influencer</span>
+            </div>
+            <h1 class="hero-title">
+              Trasforma i tuoi clienti<br />
+              in <span class="hero-highlight">influencer del tuo business</span>.
+            </h1>
+            <p class="hero-subtitle">
+              Shopping Influencer è la piattaforma che porta alle aziende clienti fidelizzati, lead qualificati
+              e una rete di oltre 5.000 commerciali attivi in Italia, con tecnologia e AI sempre al tuo fianco.
+            </p>
+
+            <div class="hero-actions">
+              <a id="whatsapp-cta-hero" class="btn" href="#">
+                <span>Scrivi a Marco su WhatsApp</span>
+              </a>
+              <button type="button" class="btn btn-secondary" id="scroll-offerta">
+                Scopri l’offerta aziende
+              </button>
+            </div>
+
+            <div class="hero-badge">
+              <span>3 minuti</span> per aderire alla app •
+              Fattura pubblicitaria deducibile al 100%
+            </div>
+          </div>
+
+          <div class="hero-right">
+            <div class="hero-card">
+              <div class="hero-ai-tag">
+                <span>🤖</span>
+                <span>AI di supporto sempre attiva</span>
+              </div>
+              <div class="hero-card-header">
+                <div>
+                  <div class="hero-card-title">Dashboard aziende partner</div>
+                  <div style="font-size: 11px; color: var(--color-text-secondary);">
+                    Dati in tempo reale su clienti, lead e fatturato generato.
+                  </div>
+                </div>
+                <div class="hero-chip">Collaborazione Google Business</div>
+              </div>
+
+              <div class="hero-metrics">
+                <div class="metric-pill">
+                  <div class="metric-label">Rete commerciale</div>
+                  <div class="metric-value">5.000+</div>
+                  <div class="metric-sub">agenti attivi in Italia</div>
+                </div>
+                <div class="metric-pill">
+                  <div class="metric-label">Marketing bonus</div>
+                  <div class="metric-value">1%</div>
+                  <div class="metric-sub">dai clienti che iscrivi</div>
+                </div>
+                <div class="metric-pill">
+                  <div class="metric-label">Tempo di onboarding</div>
+                  <div class="metric-value">3 min</div>
+                  <div class="metric-sub">per attivare la tua azienda</div>
+                </div>
+                <div class="metric-pill">
+                  <div class="metric-label">Promozioni</div>
+                  <div class="metric-value">-50%</div>
+                  <div class="metric-sub">Marketing Boost esclusivi</div>
+                </div>
+              </div>
+
+              <div class="hero-footer-row">
+                <div class="status status--success">
+                  <span class="status-dot"></span>
+                  <span>Paghi solo se hai entrate</span>
+                </div>
+                <div style="font-size: 11px; color: var(--color-text-secondary);">
+                  B2B • CMR • Database clienti • Newsletter integrata
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="vantaggi">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Perché aderire come azienda</h2>
+            <p class="section-subtitle">
+              Tutto quello che ti serve per fare marketing in modo intelligente, tracciabile e basato sui risultati.
+            </p>
+          </div>
+          <div class="badge-soft">
+            <span>✅</span>
+            <span>Fattura pubblicitaria deducibile al 100%</span>
+          </div>
+        </div>
+
+        <div class="grid-features">
+          <article class="card">
+            <div class="card-label">Clienti &amp; relazioni</div>
+            <h3 class="card-title">CRM, fidelizzazione e database clienti</h3>
+            <p class="card-body">
+              Gestisci e conosci davvero i tuoi clienti: storico acquisti, preferenze, frequenza, risposta alle promo.
+              Tutto in un’unica piattaforma con logica CRM.
+            </p>
+            <div class="pill-list">
+              <span class="pill">CRM integrato</span>
+              <span class="pill">Fidelizzazione continua</span>
+              <span class="pill">Newsletter mirate</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-label">Marketing &amp; AI</div>
+            <h3 class="card-title">Intelligenza artificiale 🤖 al tuo servizio</h3>
+            <p class="card-body">
+              L’AI ti supporta nelle campagne, nelle promozioni e nella gestione dei lead,
+              suggerendo le azioni migliori per aumentare fatturato e ritorno sul marketing.
+            </p>
+            <div class="pill-list">
+              <span class="pill">Suggerimenti promo</span>
+              <span class="pill">Automazioni marketing</span>
+              <span class="pill">Analisi lead</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-label">Lead &amp; rete vendite</div>
+            <h3 class="card-title">Lead qualificati + 5.000 commerciali</h3>
+            <p class="card-body">
+              Ricevi contatti selezionati e sfrutti una rete di oltre 5.000 commerciali che lavora ogni giorno
+              per portare clienti alle aziende partner in tutta Italia.
+            </p>
+            <div class="pill-list">
+              <span class="pill">Lead qualificati</span>
+              <span class="pill">B2B &amp; B2C</span>
+              <span class="pill">Rete vendita nazionale</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-label">Visibilità</div>
+            <h3 class="card-title">Pubblicità in app verso milioni di utenti</h3>
+            <p class="card-body">
+              Il tuo brand è presente nella app Shopping Influencer, con potenziale accesso a milioni di clienti
+              e visibilità costante grazie a promo, campagne e notifiche.
+            </p>
+            <div class="pill-list">
+              <span class="pill">Spazi promozionali</span>
+              <span class="pill">Promo fino a -50%</span>
+              <span class="pill">Marketing Boost</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-label">Modello di business</div>
+            <h3 class="card-title">Paghi solo se hai entrate</h3>
+            <p class="card-body">
+              La fattura è pubblicitaria e deducibile al 100%. Paghi una percentuale solo se generi fatturato tramite la piattaforma,
+              con iscrizione una tantum di soli 399&nbsp;€.
+            </p>
+            <div class="pill-list">
+              <span class="pill">Iscrizione una tantum 399&nbsp;€</span>
+              <span class="pill">% solo su incassi</span>
+              <span class="pill">Zero sprechi di budget</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-label">Tecnologia</div>
+            <h3 class="card-title">La miglior tecnologia, sempre aggiornata</h3>
+            <p class="card-body">
+              Integrazione con Google Business, infrastruttura scalabile, dati in sicurezza
+              e aggiornamenti continui per darti sempre un vantaggio competitivo.
+            </p>
+            <div class="pill-list">
+              <span class="pill">Integrazione Google Business</span>
+              <span class="pill">Tecnologia cloud</span>
+              <span class="pill">Aggiornamenti costanti</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing" id="offerta">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Offerta aziende partner</h2>
+            <p class="section-subtitle">
+              Un modello semplice: ti iscrivi una sola volta, attivi il tuo profilo in 3 minuti
+              e inizi a pagare solo quando generi incassi.
+            </p>
+          </div>
+          <div class="badge-soft">
+            <span>⚡</span>
+            <span>Attivazione rapida &amp; supporto dedicato</span>
+          </div>
+        </div>
+
+        <div class="pricing-wrap">
+          <div class="pricing-main">
+            <div class="pricing-main-inner">
+              <div class="pricing-pill">
+                <span>Formula performance</span>
+                <span>•</span>
+                <span>Paghi una % solo se hai entrate</span>
+              </div>
+              <div class="price-row">
+                <div class="price">399&nbsp;€</div>
+                <div class="price-once">iscrizione una tantum</div>
+              </div>
+              <p class="pricing-note">
+                Nessun canone mensile fisso: investi in pubblicità deducibile al 100%,
+                con ritorni tracciati dalla piattaforma.
+              </p>
+
+              <ul class="pricing-bullets">
+                <li>
+                  <span class="check-icon">✓</span>
+                  <span>Accesso al CRM, database clienti e newsletter integrate.</span>
+                </li>
+                <li>
+                  <span class="check-icon">✓</span>
+                  <span>1% di marketing bonus sui clienti che iscrivi tu stesso alla piattaforma.</span>
+                </li>
+                <li>
+                  <span class="check-icon">✓</span>
+                  <span>Lead qualificati e B2B generati dalla rete Shopping Influencer.</span>
+                </li>
+                <li>
+                  <span class="check-icon">✓</span>
+                  <span>Rete di oltre 5.000 commerciali attivi in Italia che lavorano per le aziende partner.</span>
+                </li>
+                <li>
+                  <span class="check-icon">✓</span>
+                  <span>Pubblicità nella app con potenziali milioni di clienti raggiungibili.</span>
+                </li>
+                <li>
+                  <span class="check-icon">✓</span>
+                  <span>Promozioni esclusive fino al -50% (Marketing Boost) per spingere le vendite nei momenti chiave.</span>
+                </li>
+                <li>
+                  <span class="check-icon">✓</span>
+                  <span>Integrazione con Google Business e automatismi di AI di supporto.</span>
+                </li>
+              </ul>
+
+              <a id="whatsapp-cta-pricing" class="btn whatsapp-btn" href="#">
+                Parla ora con Marco su WhatsApp
+              </a>
+
+              <div class="badge-ai">
+                <span>🤖</span>
+                <span>AI di supporto + tecnologia sempre aggiornata per il tuo marketing.</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="pricing-side">
+            <div class="tag">
+              <span>💼</span>
+              <span><strong>B2B</strong> &amp; B2C: il tuo brand al centro dell’ecosistema Shopping Influencer.</span>
+            </div>
+
+            <div class="lead-box">
+              <div class="lead-row">
+                <div>
+                  <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--space-4);">
+                    Lead qualificati e clienti fidelizzati
+                  </h3>
+                  <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">
+                    Ogni euro investito in pubblicità è tracciato: sai da dove arrivano i clienti, quanto spendono
+                    e quali promo funzionano davvero.
+                  </p>
+                </div>
+              </div>
+              <ul class="pricing-bullets">
+                <li>
+                  <span class="check-icon">✓</span>
+                  <span>Data base clienti proprietario, sempre aggiornato.</span>
+                </li>
+                <li>
+                  <span class="check-icon">✓</span>
+                  <span>Newsletter e comunicazioni mirate direttamente dal sistema.</span>
+                </li>
+                <li>
+                  <span class="check-icon">✓</span>
+                  <span>Supporto strategico per campagne e offerte dedicate.</span>
+                </li>
+              </ul>
+              <p style="font-size: var(--font-size-xs); color: var(--color-text-secondary); margin-top: var(--space-8);">
+                Ideale per negozi fisici, e-commerce, ristorazione, servizi e aziende che vogliono un flusso costante
+                di nuovi clienti e maggior ricorrenza di acquisto.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contatti">
+      <div class="container">
+        <div class="contact-inner">
+          <div>
+            <div class="contact-pill">
+              <span>🧑‍💼</span>
+              <span>Contatto diretto</span>
+            </div>
+            <h2 class="contact-title">Vuoi capire se Shopping Influencer è adatto alla tua azienda?</h2>
+            <p class="contact-text">
+              Scrivi direttamente a Marco per ricevere maggiori informazioni, una demo veloce della piattaforma
+              e una proposta su misura per il tuo business.
+            </p>
+            <p class="contact-meta">
+              <strong>Marco • Shopping Influencer</strong><br />
+              Consulenza dedicata per aziende partner.
+            </p>
+          </div>
+          <div class="whatsapp-box">
+            <div class="whatsapp-label">Numero diretto</div>
+            <div class="whatsapp-number">📞 348&nbsp;929&nbsp;1264</div>
+            <a id="whatsapp-cta-contact" class="btn whatsapp-btn" href="#">
+              Avvia chat WhatsApp con Marco
+            </a>
+            <div style="font-size: var(--font-size-xs); color: var(--color-text-secondary); margin-top: var(--space-8);">
+              Call to action su WhatsApp • Risposta rapida • Possibilità di video call.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="list-inline" style="justify-content: center;">
+          <span>Shopping Influencer • Soluzione B2B per aziende</span>
+          <span class="dot-divider"></span>
+          <span>Fattura pubblicitaria deducibile al 100%</span>
+          <span class="dot-divider"></span>
+          <span>Iscrizione una tantum 399&nbsp;€</span>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      var phone = "393489291264"; // prefisso internazionale per WhatsApp
+      var defaultText = encodeURIComponent(
+        "Ciao Marco, sono interessato ad aderire a Shopping Influencer con la mia azienda. Puoi darmi maggiori informazioni?"
+      );
+      var waUrl = "https://wa.me/" + phone + "?text=" + defaultText;
+
+      var ctas = [
+        document.getElementById("whatsapp-cta-hero"),
+        document.getElementById("whatsapp-cta-pricing"),
+        document.getElementById("whatsapp-cta-contact")
+      ];
+
+      ctas.forEach(function (el) {
+        if (el) {
+          el.href = waUrl;
+        }
+      });
+
+      var scrollBtn = document.getElementById("scroll-offerta");
+      if (scrollBtn) {
+        scrollBtn.addEventListener("click", function () {
+          var target = document.getElementById("offerta");
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
+
+
